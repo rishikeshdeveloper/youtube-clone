@@ -6,6 +6,8 @@ import store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Container from "./component/Container";
 import WatchPage from "./component/WatchPage";
+import Sidebar from "./component/Sidebar";
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +23,7 @@ function App() {
     <Provider store={store}>
       <div>
         <Head />
+        <Sidebar />
         <RouterProvider router={appRouter} />
         <Body />
       </div>

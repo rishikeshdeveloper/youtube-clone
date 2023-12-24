@@ -1,19 +1,28 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useParams, useSearchParams } from "react-router-dom";
-import { closetoggle } from "../utils/appSlice";
+import React, { useEffect, useState } from "react";
+// import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+// import { closetoggle } from "../utils/appSlice";
 import CommentContainer from "./CommentContainer";
 
 const WatchPage = () => {
+  const [videoDetail, setVideoDetail] = useState();
   const [searchParams] = useSearchParams();
   const videoId = searchParams.get("v");
-  const dispatch = useDispatch();
+
+  const getVideoDetail = async () => {
+    const videoDataUrl = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyBAueYoVRWFRROzse_mSFN2nBwhV7j5oto&part=snippet,contentDetails,statistics,status`;
+    const videoData = await fetch(videoDataUrl);
+    const videoDataJson = await videoData.json();
+    setVideoDetail(videoDataJson.items[0]);
+  };
+
   useEffect(() => {
-    dispatch(closetoggle());
+    getVideoDetail();
   }, []);
+
   return (
-    <div className="flex flex-col">
-      <div className="px-12 m-3">
+    <div className="flex flex-wrap float-left">
+      <div className="px-4">
         <iframe
           width="700"
           height="400"
@@ -23,7 +32,7 @@ const WatchPage = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
-        <h1>Watch Page</h1>
+        {/* <h1>{JSON.stringify(videoDetail.snippet)}</h1> */}
       </div>
 
       <CommentContainer />

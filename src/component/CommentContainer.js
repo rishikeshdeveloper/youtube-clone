@@ -4,6 +4,7 @@ const commentsData = [
   {
     name: "Rishikesh Singh",
     text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [],
   },
   {
     name: "Rishikesh Singh",
@@ -12,6 +13,7 @@ const commentsData = [
       {
         name: "Rishikesh Singh",
         text: "Lorem ipsum dolor sit amet, consectetur adip",
+        replies: [],
       },
       {
         name: "Rishikesh Singh",
@@ -32,12 +34,14 @@ const commentsData = [
                       {
                         name: "Rishikesh Singh",
                         text: "Lorem ipsum dolor sit amet, consectetur adip",
+                        replies: [],
                       },
                     ],
                   },
                   {
                     name: "Rishikesh Singh",
                     text: "Lorem ipsum dolor sit amet, consectetur adip",
+                    replies: [],
                   },
                 ],
               },
@@ -50,18 +54,22 @@ const commentsData = [
   {
     name: "Rishikesh Singh",
     text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [],
   },
   {
     name: "Rishikesh Singh",
     text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [],
   },
   {
     name: "Rishikesh Singh",
     text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [],
   },
   {
     name: "Rishikesh Singh",
     text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [],
   },
 ];
 

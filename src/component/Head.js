@@ -13,7 +13,6 @@ const Head = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log(searchCache);
       if (searchCache[searchQuery]) {
         setSuggetion(searchCache[searchQuery]);
       } else {
